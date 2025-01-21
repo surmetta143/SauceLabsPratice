@@ -17,7 +17,7 @@ def setup():
     driver.implicitly_wait(5)
     yield driver
     driver.quit()
-
+@pytest.mark.sanity
 def test_login(setup):
     driver = setup
     login_page = LoginPage(driver)
@@ -25,6 +25,7 @@ def test_login(setup):
     assert driver.title == "Swag Labs"
     print("Test case 1 passed")
 
+@pytest.mark.smoke
 def test_add_to_cart(setup):
     driver = setup
     login_page = LoginPage(driver)
@@ -35,6 +36,7 @@ def test_add_to_cart(setup):
     assert products_page.verify_cart_icon()
     print("Test case 2 passed")
 
+@pytest.mark.sanity
 def test_checkout_flow(setup):
     driver = setup
     login_page = LoginPage(driver)
@@ -47,6 +49,7 @@ def test_checkout_flow(setup):
     cart_page.proceed_to_checkout()
     assert cart_page.verify_checkout_page()
     print("Test case 3 passed")
+
 
 def test_sort_products(setup):
     driver = setup
