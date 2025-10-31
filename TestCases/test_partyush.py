@@ -7,6 +7,7 @@ from POM.login_page import LoginPage
 from POM.products_page import ProductsPage
 from POM.cart_page import CartPage
 from POM.logout_page import LogOut
+
 from POM.cart_items import CartItems
 
 @pytest.fixture
