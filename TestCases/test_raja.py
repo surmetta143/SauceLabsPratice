@@ -75,6 +75,7 @@ def test_cart_items(setup):
     time.sleep(5)
     obj.verify_cart_page_displayed()
     obj.verify_check_out_btn_displayed()
+    
     obj.verify_continue_shp_btn_displayed()
 
 
